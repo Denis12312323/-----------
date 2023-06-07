@@ -1,0 +1,519 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@font-face {
+    font-family: 'TT Travels';
+    src: url('../fonts/TTTravels-DemiBold.woff2') format('woff2'),
+        url('../fonts/TTTravels-DemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TT Travels';
+    src: url('../fonts/TTTravels-Bold.woff2') format('woff2'),
+        url('../fonts/TTTravels-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TT Travels';
+    src: url('../fonts/TTTravels-Medium.woff2') format('woff2'),
+        url('../fonts/TTTravels-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TT Travels';
+    src: url('../fonts/TTTravels-Regular.woff2') format('woff2'),
+        url('../fonts/TTTravels-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@mixin ttR {
+    font-family: 'TT Travels', sans-serif;
+    font-weight: 400;
+}
+
+@mixin ttM {
+    font-family: 'TT Travels', sans-serif;
+    font-weight: 500;
+}
+
+@mixin ttDM {
+    font-family: 'TT Travels', sans-serif;
+    font-weight: 600;
+}
+
+@mixin ttB {
+    font-family: 'TT Travels';
+    font-weight: bold;
+}
+
+$fr: 'Roboto', sans-serif;
+$ft: 'TT Travels', sans-serif;
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: 400;
+}
+
+.ibg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    img {
+        display: none;
+    }
+}
+
+a {
+    color: black;
+}
+
+.wrapper {
+    overflow: hidden;
+    min-height: 100%;
+    font-family: $ft;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+[class*='__container'] {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+//HEADER..............................................
+.header {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.header__container {
+    height: 96px;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 128px;
+}
+
+.logo {
+    img {
+        display: block;
+        max-height: 96px;
+    }
+}
+
+.header-list {
+    display: flex;
+    gap: 64px;
+}
+
+.header-link {
+    color: #000;
+    font-size: 16px;
+    @include ttR();
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease 0s;
+
+    &:hover {
+        border-color: #000;
+    }
+
+    &[href='#pro'] {
+        color: #62BF2C;
+
+        &:hover {
+            border-color: #62BF2C;
+        }
+    }
+}
+
+.account {
+    margin-left: auto;
+}
+
+// main
+// HERO=============================================
+.hero {
+    padding: 126px 0 270px 0;
+}
+
+.hero_container {
+    margin: 0 0 0 128px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    justify-content: space-between;
+}
+
+.hero-information {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    align-items: flex-start;
+    position: relative;
+}
+
+.hero-title {
+    @include ttB();
+    font-size: 50px;
+    line-height: 120%;
+    color: #000000;
+}
+
+.hero-discription {
+    font-size: 16px;
+    line-height: 170%;
+    @include ttR();
+    max-width: 653px;
+
+    span {
+        @include ttM();
+    }
+}
+
+.hero-btn {
+    background-color: #000;
+    padding: 21px 43px;
+    color: #FFFFFF;
+    @include ttR();
+    font-size: 24px;
+    line-height: 170%;
+}
+
+.hero-arrow {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateY(100%);
+}
+
+.hero-img {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+
+    &::before {
+        content: '';
+        display: block;
+        width: 900px;
+        height: 900px;
+        background-color: #FFFFFF;
+        opacity: 0.85;
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        box-shadow: -10px 30px 65px rgba(0, 0, 0, 0.2);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: -10;
+        transform: translate(-50%, -50%);
+    }
+
+    img {
+        width: 100%;
+        max-width: 550px;
+    }
+}
+
+// ABOUT BLOCK ===============================
+
+.about {}
+
+.about__container {}
+
+.about-info {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 36px;
+}
+
+.about-goal {
+    width: 50%;
+    font-size: 16px;
+    line-height: 153.5%;
+    @include ttR();
+}
+
+.about-slogan {
+    width: 50%;
+    text-align: right;
+}
+
+.about-slogan-title {
+    font-size: 16px;
+    line-height: 153.5%;
+    @include ttDM();
+    color: rgba(0, 0, 0, 0.8);
+
+}
+
+.about-slogan-text {
+    font-size: 35px;
+    line-height: 106%;
+    color: #62BF2C;
+    @include ttB();
+}
+
+.about-cards {
+    margin-top: 96px;
+    display: flex;
+    gap: 145px;
+    justify-content: space-between;
+}
+
+.about-card {
+    width: 33.333%;
+
+    &:nth-child(2) {
+        margin-top: 220px;
+    }
+
+    &:nth-child(3) {
+        margin-top: 110px;
+    }
+}
+
+.about-card-title {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.8);
+    line-height: 106%;
+    @include ttB();
+    margin-bottom: 15px;
+}
+
+.about-card-text {
+    margin-bottom: 40px;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 170%;
+    font-size: 16px;
+}
+
+.about-card-img {
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    max-height: 450px;
+}
+
+// ========================================
+
+.food {
+    margin: 120px 0 0 0;
+}
+
+.food__container {}
+
+.food-body {
+    text-align: center;
+}
+
+.food-title {
+    @include ttB();
+    font-size: 35px;
+    line-height: 106%;
+    color: #000000;
+    margin-bottom: 25px;
+
+    span {
+        font-size: 50px;
+    }
+
+}
+
+.food-description {
+    @include ttR();
+    line-height: 170%;
+    font-size: 24px;
+    color: rgba(52, 52, 52, 0.6);
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+// =====================================================
+.food-tabs {
+    margin-top: 56px;
+}
+
+.tabs-days-keys-list {
+    display: flex;
+    justify-content: space-between;
+    background-color: #F5F5F5;
+    padding: 0px 40px;
+    max-width: 880px;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+.tabs-days-keys {
+    font-size: 16px;
+    line-height: 170%;
+    @include ttM();
+    color: rgba(0, 0, 0, 0.6);
+    padding: 0 40px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    width: 24px;
+    text-align: center;
+    &:hover{ 
+        @include ttB();
+    }
+}
+
+.current {
+    @include ttB();
+}
+.tabs-content{
+    display: grid;
+    grid-template-columns: 15% 25% 35% 25%;
+}
+.tabs-eatings {}
+
+.tabs-eating-keys-list {}
+
+.tabs-eating-keys {}
+
+.tabs-eatings-info {}
+
+.tabs-dish-img {}
+
+.tabs-dish-info {}
+
+.tabs-dish-name {}
+
+.tabs-dish-ingredients-body {}
+
+.tabs-dish-ingredients-name {}
+
+.tabs-dish-ingredients-list {}
+
+.tabs-dish-ingredient {}
+
+.tabs-dish-cpfc-wrap {}
+
+.tabs-dish-cpfc-tilte {}
+
+.tabs-dish-cpfc-list {}
+
+.tabs-dish-cpfc-weight {}
+
+.tabs-comment {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.tabs-comment-title {}
+
+.tabs-comment-text {}
+
+.tabs-instractions {
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+
+.tabs-instractions-title {}
+
+.tabs-instractions-list {}
